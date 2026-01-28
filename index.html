@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti </title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: radial-gradient(circle at center, #fff0f5 0%, #ffdbf0 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+            animation: latido 3s infinite;
+        }
+
+        p {
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        /* El visor 3D */
+        model-viewer {
+            width: 100%;
+            height: 500px; /* Tamaño grande */
+            --poster-color: transparent;
+        }
+
+        .btn {
+            background-color: #d63384;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(214, 51, 132, 0.4);
+            transition: transform 0.2s;
+        }
+        .btn:active { transform: scale(0.95); }
+
+        @keyframes latido {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Princesa</h1>
+    
+    <model-viewer 
+        src="ramo.glb"
+        alt="Jarrón con flores"
+        auto-rotate
+        camera-controls
+        shadow-intensity="1"
+        disable-zoom>
+    </model-viewer>
+</body>
+</html>
